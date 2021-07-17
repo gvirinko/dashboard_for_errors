@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "lint": "eslint .",
     "lint:css": "stylelint './src/**/*.js'",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "eslintConfig": {
     "extends": [
