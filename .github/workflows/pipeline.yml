@@ -28,5 +28,4 @@ jobs:
           command: npm run test:e2e
           start: python3 -m api, npm start
           wait-on: http://localhost:3000
-        env:
-          PYTHONPATH: "./api"
+          env: PYTHONPATH="./api"
