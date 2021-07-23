@@ -26,7 +26,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           command: npm run test:e2e
-          start: pip install fastapi, python3 -m api, npm start
+          start: pip install fastapi, pip install uvicorn, python3 -m api, npm start
           wait-on: http://localhost:3000
 #          working-directory: ./api
 #          env: PYTHONPATH="./api"
