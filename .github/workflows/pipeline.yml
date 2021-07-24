@@ -18,8 +18,8 @@ jobs:
           node-version: '12.x'
       - name: npm install
         run: npm install
-      - name: lint
-        run: npm run lint
+#      - name: lint
+#        run: npm run lint
       - name: build
         run: npm run build
       - name: set up Python
@@ -30,25 +30,26 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: e2e tests
-        uses: cypress-io/github-action@v2
-        with:
-          command: npm run test:e2e
-          start: python3 -m api, npm start
-          wait-on: http://localhost:3000
+#      - name: e2e tests
+#        uses: cypress-io/github-action@v2
+#        with:
+#          command: npm run test:e2e
+#          start: python3 -m api, npm start
+#          wait-on: http://localhost:3000
       - name: deploy to prod - backend
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: dashboard-for-errors
           heroku_email: irina.gnativ@gmail.com
+          appdir: "."
           buildpack: "https://github.com/heroku/heroku-buildpack-python.git"
           procfile: "server: python3 -m api"
-      - name: deploy to prod - frontend
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: dashboard-for-errors
-          heroku_email: irina.gnativ@gmail.com
-          procfile: "web: npm start"
-          buildpack: "https://github.com/heroku/heroku-buildpack-nodejs.git"
+#      - name: deploy to prod - frontend
+#        uses: akhileshns/heroku-deploy@v3.12.12
+#        with:
+#          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+#          heroku_app_name: dashboard-for-errors
+#          heroku_email: irina.gnativ@gmail.com
+#          buildpack: "https://github.com/heroku/heroku-buildpack-nodejs.git"
+#          procfile: "web: npm start"
