@@ -33,7 +33,7 @@ jobs:
 #          cd backend
 #          pip install -r requirements.txt
       - name: run backend
-        run: cd backend, python3 -m api
+        run: cd backend && python3 -m api
 #      - name: e2e tests
 #        uses: cypress-io/github-action@v2
 #        with:
