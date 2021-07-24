@@ -28,23 +28,20 @@ jobs:
          python-version: "3.7"
       - name: install backend
         run: cd backend && python -m pip install --upgrade pip && pip install -r requirements.txt
-#      - name: starting npm
-#        run: npm start
       - name: e2e tests
         uses: cypress-io/github-action@v2
         with:
           command: npm run test:e2e
           start: python3 -m backend.api, npm start
           wait-on: http://localhost:3000
-#          working-direcory: backend
-#      - name: deploy to prod - backend
-#        uses: akhileshns/heroku-deploy@v3.12.12
-#        with:
-#          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-#          heroku_app_name: dashboard-for-errors
-#          heroku_email: irina.gnativ@gmail.com
-#          buildpack: "https://github.com/heroku/heroku-buildpack-python.git"
-#          procfile: "server: python3 -m api"
+      - name: deploy to prod - backend
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: dashboard-for-errors
+          heroku_email: irina.gnativ@gmail.com
+          buildpack: "https://github.com/heroku/heroku-buildpack-python.git"
+          procfile: "server: python3 -m api"
 #      - name: deploy to prod - frontend
 #        uses: akhileshns/heroku-deploy@v3.12.12
 #        with:
