@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-python@v1
         with:
          python-version: "3.7"
-      - name: install backend dependencies
-        run: |
-          cd backend, python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: install backend - pip
+        run: cd backend, python -m pip install --upgrade pip
+      - name: install backend - dependencies
+          cd backend, pip install -r requirements.txt
       - name: run backend
         run: cd backend, python3 -m api
 #      - name: e2e tests
