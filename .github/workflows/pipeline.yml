@@ -28,19 +28,11 @@ jobs:
          python-version: "3.7"
       - name: install backend
         run: cd backend && python -m pip install --upgrade pip && pip install -r requirements.txt
-#      - name: install backend - dependencies
-#        run: |
-#          cd backend
-#          pip install -r requirements.txt
-#      - name: run backend
-#        run: cd backend && python3 -m api
       - name: e2e tests
         uses: cypress-io/github-action@v2
         with:
           command: npm run test:e2e
-          start: |
-            npm start
-            cd backend && python3 -m api
+          start: npm start, cd backend && python3 -m api
           wait-on: http://localhost:3000
 #      - name: deploy to prod - backend
 #        uses: akhileshns/heroku-deploy@v3.12.12
