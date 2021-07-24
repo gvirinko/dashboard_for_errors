@@ -18,8 +18,8 @@ jobs:
           node-version: '12.x'
       - name: npm install
         run: npm install
-#      - name: lint
-#        run: npm run lint
+      - name: lint
+        run: npm run lint
       - name: build
         run: npm run build
       - name: set up Python
