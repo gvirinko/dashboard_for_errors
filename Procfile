@@ -1,1 +1,1 @@
-web: npm start
+server: python3 -m api
