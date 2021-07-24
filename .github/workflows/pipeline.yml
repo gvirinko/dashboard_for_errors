@@ -29,7 +29,9 @@ jobs:
       - name: install backend - pip
         run: cd backend, python -m pip install --upgrade pip
       - name: install backend - dependencies
-        run: cd backend, pip install -r requirements.txt
+        run: |
+          cd backend
+          pip install -r requirements.txt
       - name: run backend
         run: cd backend, python3 -m api
 #      - name: e2e tests
