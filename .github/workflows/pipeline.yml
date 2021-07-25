@@ -47,14 +47,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
-      - name: slack notifications
-        uses: 8398a7/action-slack@v3
+#      - name: slack notifications
+#        uses: 8398a7/action-slack@v3
+#        with:
+#          status: ${{ job.status }}
+#          fields: repo,commit,took,message,author
+#        env:
+#          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#        if: always() # Pick up events even if the job fails or is canceled.
+      - name: health check
+        uses: jtalk/url-health-check-action@v1.5
         with:
-          status: ${{ job.status }}
-          fields: repo,commit,took,message,author
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-        if: always() # Pick up events even if the job fails or is canceled.
+          # Check the following URLs one by one sequentially
+          url: https://dashboard-for-errors.herokuapp.com
+          # Follow redirects, or just report success on 3xx status codes
+          follow-redirect: no # Optional, defaults to "no"
+          # Fail this action after this many failed attempts
+          max-attempts: 3 # Optional, defaults to 1
+          # Delay between retries
+          retry-delay: 5s # Optional, only applicable to max-attempts > 1
+          # Retry all errors, including 404
+          retry-all: no # Optional, defaults to "no"
 #      - name: deploy to prod backend
 #        uses: akhileshns/heroku-deploy@v3.12.12
 #        with:
