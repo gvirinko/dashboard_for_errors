@@ -14,6 +14,7 @@ Here are the main features I’ve developed:
 - **End-to-end** testing using [Cypress](https://www.cypress.io).
 - **Linting** for JavaScript ([Eslint](https://eslint.org)) and styled-components([stylelint](https://stylelint.io))
 - Typechecking with [PropTypes](https://www.npmjs.com/package/prop-types)
+- **CI/CD pipeline** using GitHub Actions (installing frontend and backend, linting, e2e tests, health check, notifications to Slack, deploying to production on Heroku (https://dashboard-for-errors.herokuapp.com - currently only frontend))
 ## Available Scripts
 
 In the project directory, you can run:
@@ -39,9 +40,10 @@ Opens [Cypress](https://www.cypress.io) to run end-to-end tests.
 
 ## Installation
 
-- Clone the backend repository (...) and run it with `python3 -m api` command.
-- Clone this repo to your local machine using: `https://github.com/gvirinko/taskboard.git`
-- Run the project in the development mode using: `npm install` and `npm start`
+- Clone this repo to your local machine using: `https://github.com/gvirinko/dashboard_for_errors`.
+- Launch the backend using `cd backend` && `python3 -m api` commands.
+
+- Launch the frontend using: `npm install` and `npm start` commands.
 - Open http://localhost:3000 to view it in the browser. The page will automatically reload if you make changes to the code.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
