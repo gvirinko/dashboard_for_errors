@@ -34,6 +34,8 @@ jobs:
           command: npm run test:e2e
           start: python3 -m backend.api, npm start
           wait-on: http://localhost:3000
+      - name: change heroku buildpack to nodejs
+        run: heroku buildpacks:set heroku/nodejs
       - name: deploy to prod frontend
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
