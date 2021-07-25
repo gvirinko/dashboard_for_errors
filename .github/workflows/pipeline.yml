@@ -40,14 +40,13 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: dashboard-for-errors
           heroku_email: irina.gnativ@gmail.com
-#          buildpack: "https://github.com/heroku/heroku-buildpack-nodejs.git"
-      - name: deploy to prod backend
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: dashboard-for-errors
-          heroku_email: irina.gnativ@gmail.com
-#          buildpack: "https://github.com/heroku/heroku-buildpack-python.git"
-          appdir: "backend"
+#      - name: deploy to prod backend
+#        uses: akhileshns/heroku-deploy@v3.12.12
+#        with:
+#          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+#          heroku_app_name: dashboard-for-errors
+#          heroku_email: irina.gnativ@gmail.com
+##          buildpack: "https://github.com/heroku/heroku-buildpack-python.git"
+#          appdir: "backend"
 
 
