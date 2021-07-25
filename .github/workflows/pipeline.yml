@@ -42,6 +42,8 @@ jobs:
           heroku_email: irina.gnativ@gmail.com
       - name: change heroku buildpack to python
         run: heroku buildpacks:set heroku/python
+      - name: pulling from heroku
+        run: git pull heroku master
       - name: deploy to prod backend
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
