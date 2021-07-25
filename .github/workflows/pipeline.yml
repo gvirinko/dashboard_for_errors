@@ -40,6 +40,13 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: dashboard-for-errors
           heroku_email: irina.gnativ@gmail.com
+      - uses: actions/checkout@v2
+      - name: bump version and push tag
+        uses: anothrNick/github-tag-action@18284c78f6ac68868d5341f57c4f971fb5b7605c
+        if: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
 #      - name: deploy to prod backend
 #        uses: akhileshns/heroku-deploy@v3.12.12
 #        with:
