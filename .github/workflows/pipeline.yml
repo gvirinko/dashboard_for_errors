@@ -40,17 +40,18 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: dashboard-for-errors
           heroku_email: irina.gnativ@gmail.com
-      - name: add heroku buildpack python
-        run: heroku buildpacks:add --index 1 heroku/python
+#      - name: add heroku buildpack python
+#        run: heroku buildpacks:add --index 1 heroku/python
       - name: pulling from heroku
         run: git pull heroku master
+      - uses: actions/checkout@v2
       - name: deploy to prod backend
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: dashboard-for-errors
           heroku_email: irina.gnativ@gmail.com
-          buildpack: "https://github.com/heroku/heroku-buildpack-python.git"
+#          buildpack: "https://github.com/heroku/heroku-buildpack-python.git"
           appdir: "backend"
       - uses: actions/checkout@v2
       - name: bump version and push tag
