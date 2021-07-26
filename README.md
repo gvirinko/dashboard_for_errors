@@ -3,7 +3,7 @@
 This is the coding challenge for application to [Travelcircus](http://travelcircus.de) company.
 
 This app helps to manage tasks by moving them between panels from ‘backlog’ to ‘unresolved’, and from ‘unresolved’ to ‘resolved’, accordingly. Any task moved accidentally from ‘unresolved’ panel to ‘resolved’ can be moved back to ‘unresolved’.\
-Additionally, there is a possibility to click on <button>Undo last action</button> button.
+Additionally, there is a possibility to click on *Undo last action* button.
 
 Here are the main features I’ve developed:
 - Fetching data from an **API** written on python and rendering it.
@@ -12,9 +12,9 @@ Here are the main features I’ve developed:
 - Design is **responsive**, starting from 320px.
 - **Mobile view** with a slider [Swiper](https://swiperjs.com).
 - **End-to-end** testing using [Cypress](https://www.cypress.io).
-- **Linting** for JavaScript ([Eslint](https://eslint.org)) and styled-components([stylelint](https://stylelint.io))
-- Typechecking with [PropTypes](https://www.npmjs.com/package/prop-types)
-- **CI/CD pipeline** using GitHub Actions (installing frontend and backend, linting, e2e tests, health check, notifications to Slack, deploying to production on Heroku (https://dashboard-for-errors.herokuapp.com - currently only frontend))
+- **Linting** for JavaScript ([Eslint](https://eslint.org)) and styled-components ([stylelint](https://stylelint.io)).
+- Typechecking with [PropTypes](https://www.npmjs.com/package/prop-types).
+- **CI/CD pipeline** using GitHub Actions (installing frontend and backend, linting, e2e tests, health check, notifications to Slack, deploying to production on Heroku (https://dashboard-for-errors.herokuapp.com - currently only frontend)).
 ## Available Scripts
 
 In the project directory, you can run:
@@ -35,14 +35,13 @@ Runs [Eslint](https://eslint.org) to check for any errors in JavaScript.
 ### `npm run lint:css`
 Runs [stylelint](https://stylelint.io) to check for any errors in styles
 
-### `npm run cypress:open`
-Opens [Cypress](https://www.cypress.io) to run end-to-end tests.
+### `npm run test:e2e`
+Opens [Cypress](https://www.cypress.io) and runs end-to-end tests.
 
 ## Installation
 
 - Clone this repo to your local machine using: `https://github.com/gvirinko/dashboard_for_errors`.
 - Launch the backend using `cd backend` && `python3 -m api` commands.
-
 - Launch the frontend using: `npm install` and `npm start` commands.
 - Open http://localhost:3000 to view it in the browser. The page will automatically reload if you make changes to the code.
 
